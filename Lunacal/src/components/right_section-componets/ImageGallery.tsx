@@ -1,6 +1,6 @@
 
 
-import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
+import { FaArrowLeft, FaArrowRight, FaPlus} from 'react-icons/fa';
 import { useState, useRef } from 'react';
 import type { ChangeEvent } from 'react';
 function ImageGallery() {
@@ -49,7 +49,7 @@ function ImageGallery() {
     const handleAddImageClick = () => {
         fileInputRef.current?.click();
     };
-    
+
 return (
     <>
         <div className="bg-[#363c42] w-[99%] h-[300px] rounded-2xl shadow-md shadow-main-divs mb-4 relative">
@@ -77,8 +77,8 @@ return (
                         onClick={handleAddImageClick}
                         className="bg-[#42484f] shadow-add-image-button rounded-4xl w-36 h-11 items-center text-xs font-semibold"
                     >
-                        <span className='w-10 h-10 mr-2'>+</span>
-                        ADD IMAGE
+                        
+                        <FaPlus className="mr-2" /> ADD IMAGE
                     </button>
 
                     <div className="flex justify-between items-center gap-5">
