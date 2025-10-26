@@ -15,10 +15,7 @@ export const AboutMe: React.FC = () => {
     <div className="bg-gray-800 rounded-lg p-6 border border-gray-700 shadow-2xl">
       
       {/* Header and Icon Area */}
-      <div className="flex justify-between items-center mb-4">
-        <div className="text-gray-400">?</div> {/* Placeholder for the icon */}
-        <div className="text-gray-400">⚙️</div> {/* Placeholder for the icon */}
-      </div>
+      
 
       {/* 1. TAB NAVIGATION (Clicking here updates activeTabId) */}
       <TabNavigation 

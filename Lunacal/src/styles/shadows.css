@@ -8,4 +8,7 @@
   .shadow-main-divs {
     box-shadow: 4px 4px 10px rgba(0,0,0,0.9);
   }
+  .shadow-tab {
+    box-shadow: -15px -15px 40px rgba(84, 128, 186, 0.3), 1px 26px 20px rgba(0,0,0,0.9);
+  }
 }
