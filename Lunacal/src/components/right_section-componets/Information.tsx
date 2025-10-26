@@ -10,7 +10,7 @@ return (
     <>
         <div className="bg-[#363c42] w-[720px] h-[300px] rounded-2xl mb-4 relative shadow-md shadow-main-divs">
             <div className="absolute top-5 left-2 text-gray-400 hover:text-white cursor-pointer">
-                <FaQuestionCircle className="w-5 h-5" />
+                <FaQuestionCircle className="w-5 h-5 text-[#6F787C]" />
             </div>
             <div className="bg-black w-[88%] h-14 flex justify-around items-center rounded-2xl mx-auto 
                 top-5 absolute left-0 right-0">
@@ -41,7 +41,7 @@ return (
                 {activeTab === 'Recommended' && <p>Recommendations would be displayed here.</p>}
             </div>
             <div className="absolute top-36 left-2 flex items-center space-x-2 text-gray-400">
-                <BsGridFill className="w-4 h-4" /> 
+                <BsGridFill className="w-4 h-4 text-[#4a4e54]" /> 
             </div>
         </div>
     </>
