@@ -64,7 +64,7 @@ return (
 
             <div className="flex justify-between itmems-center w-[86%] absolute left-0 right-0 mx-auto top-5 mb-15">
                 
-                <div className="bg-black items-center flex justify-center w-35 h-14 rounded-3xl">
+                <div className="bg-black items-center flex justify-center w-35 h-14 rounded-3xl font-semibold text-md">
                     Gallery
                 </div>
 
@@ -79,9 +79,8 @@ return (
 
                     <button
                         onClick={handleAddImageClick}
-                        className="bg-[#42484f] shadow-add-image-button rounded-4xl w-36 h-11 items-center text-xs font-semibold"
+                        className="bg-[#42484f] shadow-add-image-button rounded-4xl w-36 h-11 flex justify-center items-center text-xs font-semibold"
                     >
-                        
                         <FaPlus className="mr-2" /> ADD IMAGE
                     </button>
 

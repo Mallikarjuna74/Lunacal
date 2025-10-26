@@ -51,57 +51,26 @@ This will start the application in development mode. Open http://localhost:5173 
 *   **Tailwind CSS**: A utility-first CSS framework for rapid UI development.
 *   **Vite**: A fast and modern build tool for web development.
 
-## 🚀 Deploying to GitHub Pages
+## 🚀 Automated Deployment to GitHub Pages
 
-You can easily deploy this project to GitHub Pages by following these steps.
+This project is configured for continuous deployment to GitHub Pages using GitHub Actions.
 
-### 1. Set the `base` path in Vite Config
+### How it Works
 
-Your project will be hosted in a subfolder on GitHub Pages (e.g., `https://<username>.github.io/<repo-name>/`). You need to tell Vite about this by setting the `base` property in your `vite.config.ts` file.
+A GitHub Actions workflow is set up in `.github/workflows/deploy.yml`. This workflow automatically triggers on every push to the `main` branch. It performs the following steps:
 
-Open `vite.config.ts` and add the `base` property, replacing `<REPO_NAME>` with the name of your GitHub repository.
+1.  **Checks out** the repository code.
+2.  **Sets up Node.js** to the required version.
+3.  **Installs** project dependencies using `npm install`.
+4.  **Builds** the application for production using `npm run build`.
+5.  **Deploys** the contents of the `dist` directory to the `gh-pages` branch.
 
-```ts
-// vite.config.ts
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
+GitHub Pages is then automatically served from this `gh-pages` branch.
 
-// https://vitejs.dev/config/
-export default defineConfig({
-  base: '/<REPO_NAME>/', // e.g., '/lunacal-assignment/'
-  plugins: [react()],
-})
-```
+### Configuration
 
-### 2. Install the `gh-pages` package
+1.  **Vite Config**: The `vite.config.ts` file is configured with `base: '/Lunacal/'` to ensure all asset paths are correct for the GitHub Pages URL structure.
 
-This is a helper package to make deploying the `dist` folder simple.
+2.  **Repository Settings**: In your GitHub repository settings under **Settings > Pages**, ensure that the source is set to **Deploy from a branch** and the branch is set to `gh-pages`.
 
-```bash
-npm install gh-pages --save-dev
-```
-
-### 3. Add Deploy Scripts to `package.json`
-
-Add a `predeploy` and `deploy` script to your `package.json`. These scripts will build your application and then push the contents of the `dist` folder to a `gh-pages` branch on your repository.
-
-```json
-"scripts": {
-  "dev": "vite",
-  "build": "vite build",
-  "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
-  "preview": "vite preview",
-  "predeploy": "npm run build",
-  "deploy": "gh-pages -d dist"
-},
-```
-
-### 4. Deploy
-
-Run the deploy script. This will build your project and push it to GitHub.
-
-```bash
-npm run deploy
-```
-
-After the script finishes, go to your GitHub repository's **Settings** > **Pages**. Make sure the source is set to deploy from the `gh-pages` branch. Your site should be live within a few minutes!
+Once you commit and push these changes, the deployment will run automatically, and your site will be live!
