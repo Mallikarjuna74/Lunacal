@@ -3,14 +3,18 @@
 import { FaArrowLeft, FaArrowRight, FaPlus} from 'react-icons/fa';
 import { useState, useRef } from 'react';
 import type { ChangeEvent } from 'react';
+import coverImage from '/images/cover.jpg';
+import questionIcon from '/images/question.svg';
+import untitledIcon from '/images/Untitled.svg';
+
 function ImageGallery() {
     const [galleryImages, setGalleryImages] = useState<string[]>([
-    `${import.meta.env.BASE_URL}images/cover.jpg`,
-    `${import.meta.env.BASE_URL}images/cover.jpg`,
-    `${import.meta.env.BASE_URL}images/cover.jpg`,
-    `${import.meta.env.BASE_URL}images/cover.jpg`,
-    `${import.meta.env.BASE_URL}images/cover.jpg`,
-    `${import.meta.env.BASE_URL}images/cover.jpg`,
+    coverImage,
+    coverImage,
+    coverImage,
+    coverImage,
+    coverImage,
+    coverImage,
     
     ]);
     
@@ -55,7 +59,7 @@ return (
         <div className="bg-[#363c42] w-[99%] h-[300px] rounded-2xl shadow-md shadow-main-divs mb-4 relative">
             
             <div className="absolute top-3 left-0 text-gray-400 hover:text-white cursor-pointer">
-                <img src={`${import.meta.env.BASE_URL}images/question.svg`} alt="Help" className="w-10 h-10"/>
+                <img src={questionIcon} alt="Help" className="w-10 h-10"/>
             </div>
 
             <div className="flex justify-between itmems-center w-[86%] absolute left-0 right-0 mx-auto top-5 mb-15">
@@ -118,7 +122,7 @@ return (
             </div>
 
             <div className="absolute top-36 left-0 flex items-center space-x-2 text-gray-400">
-                <img src={`${import.meta.env.BASE_URL}images/Untitled.svg`} alt="Decoration" 
+                <img src={untitledIcon} alt="Decoration" 
                 className="w-8 h-8"/>
             </div>
         </div>  
