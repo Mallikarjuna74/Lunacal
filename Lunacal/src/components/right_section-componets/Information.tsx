@@ -9,7 +9,7 @@ return (
     <>
         <div className="bg-[#363c42] w-[99%] h-[300px] rounded-2xl mb-4 relative shadow-md shadow-main-divs">
             <div className="absolute top-3 left-0 text-gray-400 hover:text-white cursor-pointer">
-                <img src="/images/question.svg" alt="Help" className="w-10 h-10"/>
+                <img src={`${import.meta.env.BASE_URL}images/question.svg`} alt="Help" className="w-10 h-10"/>
             </div>
             <div className="bg-black w-[86%] h-14 flex justify-around items-center rounded-2xl mx-auto 
                 top-5 absolute left-0 right-0">
@@ -40,7 +40,7 @@ return (
                 {activeTab === 'Recommended' && <p>Recommendations would be displayed here.</p>}
             </div>
             <div className="absolute top-36 left-0 flex items-center space-x-2 text-gray-400">
-                <img src="/images/Untitled.svg" alt="Decoration" 
+                <img src={`${import.meta.env.BASE_URL}images/Untitled.svg`} alt="Decoration" 
                 className="w-8 h-8"/>
             </div>
         </div>
