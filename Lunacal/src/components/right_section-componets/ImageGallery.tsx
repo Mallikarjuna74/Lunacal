@@ -1,19 +1,19 @@
 
-// import { BsGridFill } from 'react-icons/bs';
+
 import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
 import { useState, useRef } from 'react';
 import type { ChangeEvent } from 'react';
 function ImageGallery() {
     const [galleryImages, setGalleryImages] = useState<string[]>([
-    'public/images/cover.jpg',
-    'public/images/cover.jpg',
-    'public/images/cover.jpg',
-    'public/images/cover.jpg',
-    'public/images/cover.jpg',
-    'public/images/cover.jpg',
+    '/images/cover.jpg',
+    '/images/cover.jpg',
+    '/images/cover.jpg',
+    '/images/cover.jpg',
+    '/images/cover.jpg',
+    '/images/cover.jpg',
     
     ]);
-    // const [currentImageIndex, setCurrentImageIndex] = useState(0);
+    
     const fileInputRef = useRef<HTMLInputElement>(null);
     const galleryRef = useRef<HTMLDivElement>(null);
 
@@ -37,8 +37,6 @@ function ImageGallery() {
 
             if (firstImage) {
                 const style = window.getComputedStyle(firstImage);
-                // The `space-x-4` class on the parent applies `margin-left` to subsequent children.
-                // So, we take the image width and add the margin value. 1rem = 16px by default.
                 const scrollAmount = firstImage.offsetWidth + parseInt(style.marginRight, 10) + parseInt(style.marginLeft, 10) || 16;
                 gallery.scrollBy({
                     left: direction === 'left' ? -scrollAmount : scrollAmount,
@@ -51,12 +49,13 @@ function ImageGallery() {
     const handleAddImageClick = () => {
         fileInputRef.current?.click();
     };
+    
 return (
     <>
         <div className="bg-[#363c42] w-[99%] h-[300px] rounded-2xl shadow-md shadow-main-divs mb-4 relative">
             
             <div className="absolute top-3 left-0 text-gray-400 hover:text-white cursor-pointer">
-                <img src="public/images/question.svg" alt="" className="w-10 h-10"/>
+                <img src="/images/question.svg" alt="Help" className="w-10 h-10"/>
             </div>
 
             <div className="flex justify-between itmems-center w-[86%] absolute left-0 right-0 mx-auto top-5 mb-15">
@@ -119,7 +118,7 @@ return (
             </div>
 
             <div className="absolute top-36 left-0 flex items-center space-x-2 text-gray-400">
-                <img src="public/images/Untitled.svg" alt="" 
+                <img src="/images/Untitled.svg" alt="Decoration" 
                 className="w-8 h-8"/>
             </div>
         </div>  
