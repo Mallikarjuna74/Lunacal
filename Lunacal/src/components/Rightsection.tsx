@@ -8,7 +8,7 @@ function Rightsection() {
   
 
   return (
-    <div className="w-[50%] rounded-lg justify-center items-center mt-10">
+    <div className="w-[45%] rounded-lg justify-center items-center mt-10">
       <Information />
       <DividerBar />
       <ImageGallery />

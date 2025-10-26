@@ -1,6 +1,5 @@
 import { useState } from 'react';
-import { FaQuestionCircle } from 'react-icons/fa';
-import { BsGridFill } from 'react-icons/bs';
+
 
 function Information() {
 
@@ -8,16 +7,16 @@ function Information() {
 
 return (
     <>
-        <div className="bg-[#363c42] w-[720px] h-[300px] rounded-2xl mb-4 relative shadow-md shadow-main-divs">
-            <div className="absolute top-5 left-2 text-gray-400 hover:text-white cursor-pointer">
-                <FaQuestionCircle className="w-5 h-5 text-[#6F787C]" />
+        <div className="bg-[#363c42] w-[99%] h-[300px] rounded-2xl mb-4 relative shadow-md shadow-main-divs">
+            <div className="absolute top-3 left-0 text-gray-400 hover:text-white cursor-pointer">
+                <img src="public/images/question.svg" alt="" className="w-10 h-10"/>
             </div>
-            <div className="bg-black w-[88%] h-14 flex justify-around items-center rounded-2xl mx-auto 
+            <div className="bg-black w-[86%] h-14 flex justify-around items-center rounded-2xl mx-auto 
                 top-5 absolute left-0 right-0">
                 {['About Me', 'Experiences', 'Recommended'].map((tab) => (
                 <button
                     key={tab}
-                    className={`w-50 h-11 pb-1 flex justify-center items-center rounded-xl font-semibold transition-colors duration-300 ${
+                    className={`w-43 h-11 pb-1 flex justify-center items-center rounded-xl font-semibold transition-colors duration-300 ${
                     activeTab === tab ? 'bg-[#28292f] shadow-tab text-white' : 'text-gray-400 hover:bg-gray-700'
                     }`}
                     onClick={() => setActiveTab(tab)}
@@ -26,7 +25,7 @@ return (
                 </button>
                 ))}
             </div>
-            <div className="p-4 text-[#969696] text-xl absolute top-20 left-8 right-4">
+            <div className="p-4 text-[#969696] text-lg absolute top-20 left-8 right-4">
                 {activeTab === 'About Me' && (
                 <>
                     <p className="mb-4">Hello! I'm Dave, your sales rep here from Salesforce.
@@ -40,8 +39,9 @@ return (
                 {activeTab === 'Experiences' && <p>Details about experiences would go here.</p>}
                 {activeTab === 'Recommended' && <p>Recommendations would be displayed here.</p>}
             </div>
-            <div className="absolute top-36 left-2 flex items-center space-x-2 text-gray-400">
-                <BsGridFill className="w-4 h-4 text-[#4a4e54]" /> 
+            <div className="absolute top-36 left-0 flex items-center space-x-2 text-gray-400">
+                <img src="public/images/Untitled.svg" alt="" 
+                className="w-8 h-8"/>
             </div>
         </div>
     </>
